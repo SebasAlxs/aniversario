@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Meses Juntos</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #f9f7f7;
+            --accent-color: #ffd8d8;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+            color: var(--primary-color);
+        }
+        
+        section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .photo-section {
+            text-align: center;
+        }
+        
+        .our-photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: var(--shadow);
+        }
+        
+        .photo-caption {
+            font-style: italic;
+            margin-top: 10px;
+            color: var(--text-color);
+        }
+        
+        .love-counter {
+            font-size: 1.4rem;
+            text-align: center;
+            padding: 15px;
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 9px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 1;
+            top: 15px;
+        }
+        
+        .timeline-content {
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Nuevo estilo para las fotos en timeline */
+        .timeline-photo {
+            width: 100%;
+            border-radius: 10px;
+            margin: 10px 0;
+            display: block;
+            box-shadow: var(--shadow);
+        }
+        
+        .messages {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
+        .message {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: var(--accent-color);
+        }
+        
+        .message p {
+            margin-bottom: 10px;
+        }
+        
+        .message .author {
+            font-weight: bold;
+            text-align: right;
+            font-style: italic;
+        }
+        
+        .pdf-section {
+            text-align: center;
+        }
+        
+        .pdf-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .pdf-button:hover {
+            background-color: #ff4f4f;
+            transform: translateY(-2px);
+        }
+        
+        .pdf-preview {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .heart {
+            color: var(--primary-color);
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 750px;
+            }
+            
+            .timeline::after {
+                left: 50%;
+            }
+            
+            .timeline-item {
+                padding: 10px 50px;
+            }
+            
+            .timeline-item::after {
+                left: 50%;
+                margin-left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>15 Meses Juntos</h1>
+            <p>Celebrando nuestro amor día a día</p>
+        </header>
+        
+        <section class="photo-section">
+            <h2>Nosotros</h2>
+            <img src="1.jpeg" alt="Nuestra foto juntos" class="our-photo">
+            <p class="photo-caption">15 meses de amor, risas y momentos inolvidables juntos</p>
+        </section>
+        
+        <section>
+            <h2>Nuestro Tiempo Juntos</h2>
+            <div id="counter" class="love-counter">
+                <p>Llevamos juntos:</p>
+                <p><span id="days">0</span> días, <span id="hours">0</span> horas, <span id="minutes">0</span> minutos y <span id="seconds">0</span> segundos</p>
+                <p><i class="fas fa-heart heart"></i></p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Nuestro Camino Mes a Mes</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 1</h3>
+                        <img src="mes/mes1.jpeg" alt="Primer mes juntos" class="timeline-photo">
+                        <p>El inicio de esta hermosa historia, donde nuestras dos almas se encontraron y todo empezó a brillar diferente.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 2</h3>
+                        <img src="mes/mes2.jpeg" alt="Segundo mes juntos" class="timeline-photo">
+                        <p>Nos fuimos descubriendo poco a poco, entre risas, miradas y una conexión que ya se sentía mágica.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 3</h3>
+                        <img src="mes/mes3.jpeg" alt="Tercer mes juntos" class="timeline-photo">
+                        <p>Empezamos a construir juntos, incluso en los días difíciles, y ahí entendí que el amor también es elegirnos cada día.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 4</h3>
+                        <img src="mes/mes4.jpeg" alt="Cuarto mes juntos" class="timeline-photo">
+                        <p>Los sueños comenzaron a tener forma, y cada momento a su lado se volvió un recuerdo para siempre.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 5</h3>
+                        <img src="mes/mes5.jpeg" alt="Quinto mes juntos" class="timeline-photo">
+                        <p>Seguíamos aprendiendo a amarnos más y mejor, con paciencia y ternura.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 6</h3>
+                        <img src="mes/mes6.jpeg" alt="Sexto mes juntos" class="timeline-photo">
+                        <p>Medio año de amor real. De mirarnos con el alma y saber que estamos en el lugar correcto: el uno con el otro.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 7</h3>
+                        <img src="mes/mes7.jpeg" alt="Séptimo mes juntos" class="timeline-photo">
+                        <p>Las memorias seguían sumándose como estrellas en nuestro cielo. Cada una única, hermosa, brillante.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 8</h3>
+                        <img src="mes/mes8.jpeg" alt="Octavo mes juntos" class="timeline-photo">
+                        <p>Le miro y siento que cada día le amo un poquito más. Y no dejo de sorprenderme de lo bonito que es esto.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 9</h3>
+                        <img src="mes/mes9.jpeg" alt="Noveno mes juntos" class="timeline-photo">
+                        <p>Seguimos descubriendo el mundo juntos, pero lo más bonito es cómo seguimos descubriéndonos el uno al otro.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 10</h3>
+                        <img src="mes/mes10.jpeg" alt="Décimo mes juntos" class="timeline-photo">
+                        <p>Planificando nuestro próximo capítulo.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 11</h3>
+                        <img src="mes/mes11.jpeg" alt="Undécimo mes juntos" class="timeline-photo">
+                        <p>La emoción de nuestro primer año se sentía cerca, y con ella, la certeza de que esto es amor de verdad.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 12</h3>
+                        <img src="mes/mes12.jpeg" alt="Duodécimo mes juntos" class="timeline-photo">
+                        <p>Un año completo contigo. 365 días llenos de amor, de risas, de aprendizajes, y sobre todo, de nosotros.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 13</h3>
+                        <img src="mes/mes13.jpeg" alt="Mes trece juntos" class="timeline-photo">
+                        <p>Comenzamos un nuevo capítulo con más amor que nunca. Si el primer año fue mágico, este promete aún más.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 14</h3>
+                        <img src="mes/mes14.jpeg" alt="Mes catorce juntos" class="timeline-photo">
+                        <p>Su amor me sigue transformando, enseñándome lo hermoso que es caminar de la mano con alguien como usted.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mes 15</h3>
+                        <img src="mes/mes15.jpeg" alt="Mes quince juntos" class="timeline-photo">
+                        <p>15 meses juntos, y aún me emociono como el primer día. Gracias por ser mi hogar, mi calma y mi locura bonita.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Mensajes Especiales</h2>
+            <div class="messages">
+                <div class="message">
+                    <p>"Han pasado 15 meses y sigo sintiendo mariposas cuando le veo. Gracias por amarme con tanta dulzura, por su risa que me abraza el alma y por ser mi refugio favorito."</p>
+                    <p class="author">- Con amor, [Sebas]</p>
+                </div>
+                
+                <div class="message">
+                    <p>"Me encanta cómo me hace sentir. Con usted, cada momento ordinario se convierte en algo extraordinario."</p>
+                    <p class="author">- [Sebas]</p>
+                </div>
+                
+                <div class="message">
+                    <p>"15 meses a su lado se sienten como un suspiro, pero a la vez como toda una vida llena de amor. Le amo con cada parte de mí, y más allá."</p>
+                    <p class="author">- [Sebas]</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pdf-section">
+            <h2>Razones Por Las Que Me Enamoré</h2>
+            <p>Haga clic para ver las razones por las que me enamoré de usted y las cosas que más me gustan de usted.</p>
+            
+            <!-- Aquí puedes cambiar el enlace para que apunte a tu PDF -->
+            <a href="#" class="pdf-button" id="pdf-toggle">
+                <i class="fas fa-heart"></i> Ver Razones
+            </a>
+            
+            <div id="pdf-container" style="display: none;">
+                <!-- Aquí puedes insertar tu PDF real cuando lo tengas -->
+                <iframe class="pdf-preview" src="razones.pdf" alt="PDF con razones"></iframe>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Con todo mi amor, para usted. Felices 15 meses juntos mi amor <i class="fas fa-heart heart"></i></p>
+        </footer>
+    </div>
+
+    <script>
+        // Contador desde el inicio de la relación - Fecha actualizada
+        const startDate = new Date('2024-01-15'); // Formato: YYYY-MM-DD - Calculado para 15 meses el 15 de abril
+        
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        // Actualizar contador cada segundo
+        setInterval(updateCounter, 1000);
+        updateCounter(); // Ejecutar inmediatamente
+        
+        // Toggle para mostrar el PDF
+        document.getElementById('pdf-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            const pdfContainer = document.getElementById('pdf-container');
+            if (pdfContainer.style.display === 'none') {
+                pdfContainer.style.display = 'block';
+                this.innerHTML = '<i class="fas fa-heart-broken"></i> Ocultar Razones';
+            } else {
+                pdfContainer.style.display = 'none';
+                this.innerHTML = '<i class="fas fa-heart"></i> Ver Razones';
+            }
+        });
+    </script>
+</body>
+</html>
